@@ -1,12 +1,12 @@
-function [posteriori] = parzen_window(x_i, X, K, h)
+function [posteriori] = parzen_window(x_i, X, K, h, j)
 	
-	posteriori = 0
-	n = size(X_train,1);
+	n = size(X,1);
 
 	soma = 0;
 	for i = 1:n
-		x = X(i);
-		soma = soma + (1/h) * K(x, x_i, h);
+		x = X(i,:);
+
+		soma = soma + (1/h) * K(x, x_i, h, j);
 	end
 	posteriori = 1/soma;	
 	

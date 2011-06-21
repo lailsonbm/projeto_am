@@ -5,9 +5,9 @@ function [C] = pw_classificador(X, X_train, C_train, kernel, h, k)
 		MU = medias_amostrais(X_train, C_train);
 		SIGM = covariancias_amostrais(X_train, C_train);
 
-		K = @(c,x,h) mvnpdf((c-x)/h, MU, SIGM);
+		K = @(c,x,h,j) mvnpdf((c-x)/h, MU(j), SIGM{j});
 	else		
-		K = @(c,x,h) janela(c,x,h);
+		K = @(c,x,h,j) janela(c,x,h);
 	end	
 	
 	C = zeros(n,1);
@@ -17,9 +17,9 @@ function [C] = pw_classificador(X, X_train, C_train, kernel, h, k)
 		min_c = 0;
 		
 		for j = 1:k
-			x_i = X(i);
-			Xs = X_train(find(C_train == j));
-			posteriori = parzen_window(x_i, Xs, K, h);
+			x_i = X(i,:);
+			Xs = X_train(find(C_train == j),:);
+			posteriori = parzen_window(x_i, Xs, K, h, j);
 			if posteriori < min_posteriori
 				min_c = j;
 				min_posteriori = posteriori;
