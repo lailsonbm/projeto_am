@@ -1,4 +1,4 @@
-function [posteriori] = parzen_window(x_i, X, K, h, j)
+function [p_condicional] = parzen_window(x_i, X, K, h, j)
 	
 	n = size(X,1);
 
@@ -8,7 +8,7 @@ function [posteriori] = parzen_window(x_i, X, K, h, j)
 
 		soma = soma + (1/h) * K(x, x_i, h, j);
 	end
-	posteriori = 1/soma;	
+	p_condicional = (1/n) * soma;	
 	
 	return;
 end

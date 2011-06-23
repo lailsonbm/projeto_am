@@ -14,10 +14,10 @@ function [C] = pw_classificador(X, X_train, C_train, kernel, h, k)
 	
 	for i = 1:n
 		min_posteriori = inf;
-		min_c = 0;
+		min_c = 0;		
+		x_i = X(i,:);
 		
 		for j = 1:k
-			x_i = X(i,:);
 			Xs = X_train(find(C_train == j),:);
 			posteriori = parzen_window(x_i, Xs, K, h, j);
 			if posteriori < min_posteriori
