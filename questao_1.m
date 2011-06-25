@@ -48,10 +48,7 @@ min_P
 % ----------------------------
 % TODO Substituir por matriz de confusão
 [t_g, T_k, C_eq] = avaliar_cluster(min_C, A);
-disp(sprintf('Taxa de erro global: %.2f%%', t_g*100));
-for i = 1:size(T_k, 1)
-  disp(sprintf('Taxa de erro da classe %d: %.2f%%', i, T_k(i)*100));
-end
+imprimir_avaliacao(min_C, A);
 
 
 % ----------------------------
