@@ -5,7 +5,7 @@
 X = [] % pegar os valores gerados dos dados
 C = [] % considerar C devidamente avaliado pelo K-Means
 
-X = [] 		 % dados de test
+X = []     % dados de test
 X_train = [] % dados de treino
 C_train = [] % o mesmo que a saída do K-Means (C)
 
@@ -37,19 +37,19 @@ h = 5;
 
 % variando a função de kernel para o parzen window.
 for kernel = kernels
-	
-	n = size(X,1);
-	if kernel == 'normal'
-		K = @(c,x,h,j) mvnpdf((c-x)/h, MU(j), SIGM{j});
-	else		
-		K = @(c,x,h,j) janela(c,x,h);
-	end
-	
-	for j = 1:k
-		for i = 1:n
-			x_i = X(i,:);
-			Xs = X_train(find(C_train == j),:);
-			S_Parzen(kernek, i,j) = parzen_window(x_i, Xs, K, h, j); % NILSON... ajuda aqui!!! no S_Parzen, a ideia é ter uma matriz solução para cada tipo de kernel...
-		end
-	end
+  
+  n = size(X,1);
+  if kernel == 'normal'
+    K = @(c,x,h,j) mvnpdf((c-x)/h, MU(j), SIGM{j});
+  else    
+    K = @(c,x,h,j) janela(c,x,h);
+  end
+  
+  for j = 1:k
+    for i = 1:n
+      x_i = X(i,:);
+      Xs = X_train(find(C_train == j),:);
+      S_Parzen(kernek, i,j) = parzen_window(x_i, Xs, K, h, j); % NILSON... ajuda aqui!!! no S_Parzen, a ideia é ter uma matriz solução para cada tipo de kernel...
+    end
+  end
 end

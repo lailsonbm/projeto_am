@@ -5,7 +5,7 @@ carregar_dados;
 
 
 % ----------------------------
-% PR…-PROCESSAMENTO
+% PR√â-PROCESSAMENTO
 % ----------------------------
 
 % Computando matriz (triangular) de dissimilaridades
@@ -44,9 +44,9 @@ min_P
 
 
 % ----------------------------
-% AVALIA«√O
+% AVALIA√á√ÉO
 % ----------------------------
-% TODO Substituir por matriz de confus„o
+% TODO Substituir por matriz de confus√£o
 [t_g, T_k, C_eq] = avaliar_cluster(min_C, A);
 disp(sprintf('Taxa de erro global: %.2f%%', t_g*100));
 for i = 1:size(T_k, 1)
