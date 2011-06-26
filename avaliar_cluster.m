@@ -32,23 +32,3 @@ function [t_g T_k C_eq] = avaliar_cluster(C, A)
   t_g = sum(A~=C_eq)/300;
   T_k = [sum(A_1~=C_eq_1)/150 ; sum(A_2~=C_eq_2)/100 ; sum(A_3~=C_eq_3)/50 ];
 end
-
-
-% % definindo limites de elementos rotulados
-% bordas = find(edge(A));
-% k = size(bordas, 1) + 1; % numero de clusters
-% n = size(X, 1); % numero de elementos
-% limites = zeros(k, 2);
-% for i = 1:k
-%   if i == 1
-%     inicio = 1;
-%     fim = bordas(1) - 1;
-%   elseif i == k
-%     inicio = bordas(k-1);
-%     fim = n;
-%   else
-%     inicio = bordas(i-1);
-%     fim = bordas(i) - 1;
-%   end
-%   limites(i, :) = [inicio fim];
-% end
