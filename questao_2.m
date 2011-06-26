@@ -27,7 +27,7 @@ for kernel = Kernels
   for h = H
     disp(sprintf('kernel = %s', kernel{1}));
     disp(sprintf('h = %d', h));
-    [C_pw Pb_pw] = da_classificador(X, X, C_eq); % TODO mudar para pw
+    [C_pw Pb_pw_i] = da_classificador(X, X, C_eq); % TODO mudar para pw
     imprimir_avaliacao(C_pw, C_eq);
   end
 end
