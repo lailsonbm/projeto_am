@@ -62,4 +62,4 @@ save cluster.mat min_J min_P t_g T_k C_eq;
 % ----------------------------
 plot_cluster(X, A);
 figure;
-plot_cluster(X, C_eq, P);
+plot_cluster(X, C_eq, min_P);

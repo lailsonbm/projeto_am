@@ -3,7 +3,7 @@ function [] = plot_cluster(X, C, P)
     error('X and C must have the same number of lines.');
   end
   
-  styles = {'*c', '+r', 'og'};
+  styles = {'*b', '+r', 'og'};
   
   clusters = unique(C);
   k = size(clusters, 1);
@@ -23,6 +23,7 @@ function [] = plot_cluster(X, C, P)
       plot(proto(:, 1), proto(:, 2), '.k');
     end
   end
+  legend('Classe 1', 'Classe 2', 'Classe 3', 'Location', 'SouthEast');
   
   hold off;
 end
