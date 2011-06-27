@@ -2,7 +2,7 @@ function [C Pb] = pw_classificador(X, X_train, C_train, kernel)
 	
 	k = 3;
 	n = size(X,1);
-	h = 3;
+	h = 2;
 	
 	%MU = medias_amostrais(X_train, C_train);
 	%SIGM = covariancias_amostrais(X_train, C_train);
