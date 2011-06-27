@@ -51,9 +51,9 @@ for i = 1:n_conjuntos
 end
 
 disp('ERRO MEDIO');
-disp(sprintf('[DA]: %6.2f', mean(err_DA)*100));
-disp(sprintf('[PW1]: %6.2f', mean(err_PW1)*100));
-disp(sprintf('[PW2]: %6.2f', mean(err_PW2)*100));
-disp(sprintf('[CS]: %6.2f', mean(err_CS)*100));
-disp(sprintf('[CP]: %6.2f', mean(err_CP)*100));
-disp(sprintf('[CM]: %6.2f', mean(err_CM)*100));
+disp(sprintf('[DA]:  %6.2f +- %6.2f',  mean(err_DA)*100, std(err_DA)*100));
+disp(sprintf('[PW1]: %6.2f +- %6.2f', mean(err_PW1)*100, std(err_PW1)*100));
+disp(sprintf('[PW2]: %6.2f +- %6.2f', mean(err_PW2)*100, std(err_PW2)*100));
+disp(sprintf('[CS]:  %6.2f +- %6.2f',  mean(err_CS)*100, std(err_CS)*100));
+disp(sprintf('[CP]:  %6.2f +- %6.2f',  mean(err_CP)*100, std(err_CP)*100));
+disp(sprintf('[CM]:  %6.2f +- %6.2f',  mean(err_CM)*100, std(err_CM)*100));
